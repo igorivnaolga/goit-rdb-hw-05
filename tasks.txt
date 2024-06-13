@@ -1,3 +1,5 @@
-1. USE hw3_schema;
-SELECT *, (SELECT customer_id FROM orders o
+1. SELECT *, (SELECT customer_id FROM orders o
 WHERE o.id = od.order_id) AS customer_id FROM order_details od;
+
+2. SELECT * FROM order_details od
+WHERE (SELECT shipper_id FROM orders o  WHERE o.id = od.order_id) = 3;
